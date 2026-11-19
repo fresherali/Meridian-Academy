@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* =================================
+   COURSES PAGE ANIMATIONS
+================================= */
+
+@keyframes courseFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-reveal {
+  animation: courseFadeUp 0.8s ease-out both;
+}
+
+/* Smooth scrolling for course sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .course-reveal {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
